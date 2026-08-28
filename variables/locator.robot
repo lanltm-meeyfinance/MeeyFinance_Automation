@@ -1,0 +1,15 @@
+*** Variable ***
+
+${TXT_PHONE_NUMBER}     id=r5
+
+${TXT_PASSWORD}         id=r6
+
+${BTN_LOGIN}            css=button[type=submit]
+
+${BTN_SHOW_PW}          css=button[aria-label="toggle password visibility"]
+
+${LBL_MSG_PHONE}            id=:r2:-helper-text
+
+${LBL_MSG_PASSWORD}         id=:r3:-helper-text
+
+${LBL_DASHBOARD}            css=img[alt="logo]

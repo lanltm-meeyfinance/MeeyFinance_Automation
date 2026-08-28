@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Robot Framework
+results/
+output.xml
+log.html
+report.html
+
+# Playwright
+playwright-report/
+test-results/
+.browser/
+
+# VS Code
+.vscode/
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db
