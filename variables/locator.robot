@@ -1,8 +1,8 @@
 *** Variable ***
 
-${TXT_PHONE_NUMBER}     id=r5
+${TXT_PHONE_NUMBER}     id=:r2:
 
-${TXT_PASSWORD}         id=r6
+${TXT_PASSWORD}         id=:r3:
 
 ${BTN_LOGIN}            css=button[type=submit]
 
@@ -12,4 +12,4 @@ ${LBL_MSG_PHONE}            id=:r2:-helper-text
 
 ${LBL_MSG_PASSWORD}         id=:r3:-helper-text
 
-${LBL_DASHBOARD}            css=img[alt="logo]
+${LBL_DASHBOARD}            css=img[alt="logo"]

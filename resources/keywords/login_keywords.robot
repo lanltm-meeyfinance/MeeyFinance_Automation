@@ -16,7 +16,7 @@ Login Succesfully
     Verify Login Success
 
 Login Failed
-    [Arguments]     ${phone}    ${password}
+    [Arguments]     ${phone}    ${password}     ${message}
     Login With Account      ${phone}    ${password}
     Verify Login Error      ${message}
     
