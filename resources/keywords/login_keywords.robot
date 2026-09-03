@@ -20,3 +20,24 @@ Login Failed
     Login With Account      ${phone}    ${password}
     Verify Login Error      ${message}
     
+Login Template
+[Arguments]
+    ...    ${tc_id}
+    ...    ${description}
+    ...    ${phone}
+    ...    ${password}
+    ...    ${expected}
+    ...    ${message}
+
+    Log To Console    ===== ${tc_id} : ${description} =====
+
+    Login With Account
+    ...    ${phone}
+    ...    ${password}
+
+    IF    '${expected}' == 'SUCCESS'
+        Verify Login Success
+    ELSE
+        Verify Login Error Message
+        ...    ${message}
+    END

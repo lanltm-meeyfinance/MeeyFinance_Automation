@@ -31,21 +31,17 @@ TC_Login_003_Login_Invalid_Phone
 
     [Tags]      smoke      login
     Login Failed      
-    ...     ${INVALID_PHONE}
-    ...    ${VALID_PASSWORD}
-    ...     Số điện thoại không hợp lệ
+    ...     ${INVALID_PHONE_ACCOUNT.phone}
+    ...     ${INVALID_PHONE_ACCOUNT.password}
+    ...     ${INVALID_PHONE_ACCOUNT.expected}
 
 TC_Login_004_Login_Not_Exist_Phone
     [Documentation]     Verify customer cannot login successfully with not exists phone number
 
     [Tags]      smoke             login
     Login Failed      
-    ...     ${NOTEXIST_PHONE}
-    ...    ${VALID_PASSWORD}
-    ...     Số điện thoại không tồn tại. Vui lòng kiểm tra lại
+    ...     ${NOT_EXIST_ACCOUNT.phone}
+    ...     ${NOT_EXIST_ACCOUNT.password}
+    ...     ${NOT_EXIST_ACCOUNT.expected}
 
-Loop Phone Number
-    FOR      ${phone}    IN  @{PHONE_LIST}
-        Log To Console      ${phone}
-    END
 
