@@ -24,7 +24,14 @@ Verify Login Success
     ...     state=visible
 
 Verify Login Error
-    [Arguments]     ${messsage}
+    [Arguments]    ${locator}    ${message}
+
     Wait For Elements State
-    ...     text=${messsage}
-    ...     state=visible
+    ...    ${locator}
+    ...    visible
+
+    ${actual_message}=    Get Text    ${locator}
+
+    Should Be Equal As Strings
+    ...    ${actual_message}
+    ...    ${message}

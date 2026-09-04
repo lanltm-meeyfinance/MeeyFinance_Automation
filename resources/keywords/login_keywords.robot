@@ -1,6 +1,7 @@
 *** Settings ***
 Library     Browser
 Resource    ../pages/login_page.robot
+Resource    ../../variables/account.robot
 
 *** Keywords ***
 
@@ -16,28 +17,35 @@ Login Succesfully
     Verify Login Success
 
 Login Failed
-    [Arguments]     ${phone}    ${password}     ${message}
-    Login With Account      ${phone}    ${password}
-    Verify Login Error      ${message}
-    
-Login Template
-[Arguments]
-    ...    ${tc_id}
-    ...    ${description}
-    ...    ${phone}
-    ...    ${password}
-    ...    ${expected}
-    ...    ${message}
-
-    Log To Console    ===== ${tc_id} : ${description} =====
+    [Arguments]    ${phone}    ${password}  ${error_field}    ${expected_message}
 
     Login With Account
     ...    ${phone}
     ...    ${password}
 
+    Verify Login Error
+        ...    ${LBL_ERROR_MSG}[${error_field}]
+        ...    ${expected_message}
+    
+Run Login Template
+    [Arguments]
+    ...    ${description}
+    ...    ${phone}
+    ...    ${password}
+    ...    ${expected}
+    ...    ${error_field}
+    ...    ${message}
+
+    Log To Console    ===== ${description} =====
+
     IF    '${expected}' == 'SUCCESS'
-        Verify Login Success
+        Login Succesfully
+        ...    ${phone}
+        ...    ${password}
     ELSE
-        Verify Login Error Message
+            Login Failed
+        ...    ${phone}
+        ...    ${password}
+        ...    ${error_field}
         ...    ${message}
     END

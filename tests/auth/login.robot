@@ -2,7 +2,6 @@
 Resource    ../../resources/common.robot
 Resource   ../../resources/keywords/login_keywords.robot
 Resource   ../../variables/account.robot
-Resource    ../../data/auth/login_list.robot
 
 Test Setup      Open Browser To Login Page
 Test Teardown   Run Keywords
