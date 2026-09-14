@@ -1,0 +1,8 @@
+# config/dev.yaml
+# Cac bien nay se override bien mac dinh trong variables/env.robot khi chay
+# python run_robot.py --testtype ui --env dev
+
+BASE_URL: "https://customer-meeyfinance.meey.dev"
+BROWSER: "chromium"
+HEADLESS: "False"
+TIMEOUT: "10s"

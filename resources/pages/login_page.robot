@@ -1,6 +1,7 @@
 *** Settings ***
 Library     Browser
-Resource        ../../variables/locator.robot
+Resource        ../locators/common_locators.robot
+Resource        ../locators/login_locators.robot
 
 *** Keywords ***
 

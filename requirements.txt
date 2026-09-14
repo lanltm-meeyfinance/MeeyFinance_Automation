@@ -1,0 +1,12 @@
+robotframework
+robotframework-browser
+robotframework-requests
+robotframework-pabot
+robotframework-datadriver[XLS]
+robotframework-archivelibrary
+jsonpath-rw
+jsonpath-rw-ext
+pyyaml
+python-dotenv
+pycryptodome
+python-dateutil

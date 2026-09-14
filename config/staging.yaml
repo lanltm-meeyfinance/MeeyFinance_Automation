@@ -1,0 +1,8 @@
+# config/staging.yaml
+# Doi BASE_URL / HEADLESS de mo phong moi truong staging
+# python run_robot.py --testtype ui --env staging
+
+BASE_URL: "https://customer-meeyfinance.meey.stg"
+BROWSER: "chromium"
+HEADLESS: "True"
+TIMEOUT: "15s"

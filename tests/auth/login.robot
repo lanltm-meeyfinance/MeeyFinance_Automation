@@ -23,6 +23,7 @@ TC_Login_002_Login_Incorrect_Password
     Login Failed     
     ...     ${WRONG_PASSWORD_ACCOUNT.phone}
     ...     ${WRONG_PASSWORD_ACCOUNT.password}
+    ...     ${WRONG_PASSWORD_ACCOUNT.error_field}
     ...     ${WRONG_PASSWORD_ACCOUNT.expected}
 
 TC_Login_003_Login_Invalid_Phone
@@ -32,6 +33,7 @@ TC_Login_003_Login_Invalid_Phone
     Login Failed      
     ...     ${INVALID_PHONE_ACCOUNT.phone}
     ...     ${INVALID_PHONE_ACCOUNT.password}
+    ...     ${INVALID_PHONE_ACCOUNT.error_field}
     ...     ${INVALID_PHONE_ACCOUNT.expected}
 
 TC_Login_004_Login_Not_Exist_Phone
@@ -41,6 +43,7 @@ TC_Login_004_Login_Not_Exist_Phone
     Login Failed      
     ...     ${NOT_EXIST_ACCOUNT.phone}
     ...     ${NOT_EXIST_ACCOUNT.password}
+    ...     ${NOT_EXIST_ACCOUNT.error_field}
     ...     ${NOT_EXIST_ACCOUNT.expected}
 
 
