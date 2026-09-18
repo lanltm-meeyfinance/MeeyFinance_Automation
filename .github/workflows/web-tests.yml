@@ -31,7 +31,16 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install --no-cache-dir -r requirements.txt
-          rfbrowser init
+
+      - name: Manually install Browser library node dependencies
+        run: |
+          WRAPPER_DIR=$(python -c "import Browser, os; print(os.path.join(os.path.dirname(Browser.__file__), 'wrapper'))")
+          echo "Wrapper dir: $WRAPPER_DIR"
+          cd "$WRAPPER_DIR"
+          npm install
+
+      - name: Init Robot Framework Browser (download browser binaries)
+        run: rfbrowser init
 
       - name: Run web tests
         env:
