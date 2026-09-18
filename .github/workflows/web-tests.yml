@@ -22,14 +22,12 @@ jobs:
       - name: Install system dependencies
         run: |
           apt-get update && apt-get install -y ffmpeg curl wget unzip
-          curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-          apt-get install -y nodejs
 
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install --no-cache-dir -r requirements.txt
-          rfbrowser init || true
+          rfbrowser init
 
       - name: Run web tests
         env:
@@ -39,7 +37,7 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python run_robot.py --testtype ui --env dev --headless --exclude-tags otp_required
+        run: python run_robot.py --testtype ui --env staging --headless
 
       - name: Upload test reports
         if: always()
