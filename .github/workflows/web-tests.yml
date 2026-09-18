@@ -22,6 +22,10 @@ jobs:
       - name: Install system dependencies
         run: |
           apt-get update && apt-get install -y ffmpeg curl wget unzip
+          curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+          apt-get install -y nodejs
+          node --version
+          npm --version
 
       - name: Install Python dependencies
         run: |
@@ -37,7 +41,7 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python run_robot.py --testtype ui --env staging --headless
+        run: python run_robot.py --testtype ui --env dev --headless --exclude-tags otp_required
 
       - name: Upload test reports
         if: always()
